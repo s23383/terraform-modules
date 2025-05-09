@@ -35,7 +35,7 @@ resource "argocd_application" "applications" {
     }
   }
 
-  upsert = true
+#  upsert = true
 
   depends_on = [
     argocd_repository.test_deployment_repo,

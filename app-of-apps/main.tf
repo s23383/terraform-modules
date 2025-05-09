@@ -1,7 +1,7 @@
 resource "argocd_repository" "test_deployment_repo" {
-  repo = var.repo_url
-  name = var.repo_name
-  type = "git"
+  repo     = var.repo_url
+  name     = var.repo_name
+  type     = "git"
   username = var.repo_username
   password = var.repo_password
   insecure = true
@@ -29,11 +29,15 @@ resource "argocd_application" "applications" {
 
     sync_policy {
       automated {
-        prune = true
+        prune     = true
         self_heal = true
       }
     }
   }
 
-  depends_on = [argocd_repository.test_deployment_repo]
+  upsert = true
+
+  depends_on = [
+    argocd_repository.test_deployment_repo
+  ]
 }

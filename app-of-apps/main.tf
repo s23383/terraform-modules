@@ -2,8 +2,6 @@ resource "argocd_repository" "test_deployment_repo" {
   repo     = var.repo_url
   name     = var.repo_name
   type     = "git"
-  username = var.repo_username
-  password = var.repo_password
   insecure = true
 }
 

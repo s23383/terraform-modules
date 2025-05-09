@@ -10,15 +10,6 @@ variable "repo_name" {
   type = string
 }
 
-variable "repo_username" {
-  type = string
-}
-
-variable "repo_password" {
-  type      = string
-  sensitive = true
-}
-
 variable "repo_path" {
   type = string
 }
